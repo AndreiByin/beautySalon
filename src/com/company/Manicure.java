@@ -1,5 +1,5 @@
 package com.company;
 
-public class Manicure {
+public class Manicure extends Services {
 
 }

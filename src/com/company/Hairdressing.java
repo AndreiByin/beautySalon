@@ -1,6 +1,6 @@
 package com.company;
 
-public class Hairdressing {
+public class Hairdressing extends Services {
     String tep;
 
 }

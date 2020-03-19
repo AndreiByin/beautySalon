@@ -1,4 +1,4 @@
 package com.company;
 
-public class MenHaircut {
+public class MenHaircut extends Hairdressing {
 }
