@@ -55,27 +55,46 @@ public class ServiceController {
 
      }
       public void SaveToFileServices(){
-
+          FileOutputStream fos = null;
+          ObjectOutputStream oos = null;
           try {
-              FileOutputStream fos = new FileOutputStream("c:\\temp\\writeservices");
-              ObjectOutputStream oos = new ObjectOutputStream(fos);
+             fos = new FileOutputStream("c:\\temp\\services");
+             oos =  new ObjectOutputStream(fos);
               oos.writeObject(serviceName);
-              oos.close();
+
           } catch (IOException e) {
               e.printStackTrace();
           }
+          finally {
+              try {
+              oos.close();
+              fos.close();
+              } catch (IOException e) {
+                  e.printStackTrace();
+              }
+          }
 
       }
-      public void WriteServices(){
-    ArrayList<Service> serviceName;
-
+      public void readFromFileServices(){
+          FileInputStream fis = null;
+          ObjectInputStream  ois = null;
           try {
-              FileInputStream fis = new FileInputStream("c:\\temp\\writeservicessssss");
-              ObjectInputStream ois = new ObjectInputStream(fis);
-              serviceName =(ArrayList<Service>)ois.readObject();
+               fis = new FileInputStream("c:\\temp\\services");
+               ois = new ObjectInputStream(fis);
+              listService = ( ArrayList<Service>) ois.readObject();
+
 
           } catch (IOException | ClassNotFoundException e) {
               e.printStackTrace();
+          }
+          finally {
+              try {
+              ois.close();
+              fis.close();
+              } catch (IOException e) {
+                  e.printStackTrace();
+              }
+
           }
 
 
