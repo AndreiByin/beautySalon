@@ -1,4 +1,4 @@
 package com.company;
 
-public class BodyCorrection extends Services {
+public class BodyCorrection extends Service {
 }
