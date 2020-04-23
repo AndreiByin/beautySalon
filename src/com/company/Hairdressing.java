@@ -1,17 +1,20 @@
 package com.company;
 
-public class Hairdressing extends Service {
-    String tep;
+import java.io.Serializable;
 
+public class Hairdressing extends Specialist implements Serializable {
+   protected String specialization;
+   protected int category;
 
-    public Hairdressing(String name) {
-        this.serviceName = name;
-
-
+    public Hairdressing(String name, int age, int id, String position, String hiringDate,
+                        int experience, String education, String medicalExaminationDate, String specialization, int category) {
+        super(name, age, id, position, hiringDate, experience, education, medicalExaminationDate);
+        this.specialization = specialization;
+        this.category = category;
     }
-
-    public Hairdressing() {
-
+    @Override
+    public  void infoSpecialist() {
+        System.out.println("информация про Парикхмахер ");
     }
 }
 
