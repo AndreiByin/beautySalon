@@ -8,8 +8,9 @@ public class Menu {
  protected static void run() {
         ServiceController serviceControllerObj = new ServiceController();
         UserController userControllerObj = new UserController();
+        CustomerController customerControllerObj = new CustomerController();
         String choose = "0";
-        while (!choose.equals("4")) {
+        while (!choose.equals("6")) {
             System.out.println("Введите \n 1 для работы с клиентами \n " +
                     "2 для работы с услугами \n " +
                     "3 для работы с сотрудниками \n" +
@@ -24,7 +25,7 @@ public class Menu {
 
                 switch (choose) {
                     case "1":
-                        System.out.println("Клиенты");
+                        customerControllerObj.getClass();
                         break;
                     case "2":
                         serviceControllerObj.getServiceMenu();

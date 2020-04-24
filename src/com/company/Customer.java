@@ -1,6 +1,8 @@
 package com.company;
 
-public class Customer {
+import java.io.Serializable;
+
+public class Customer implements Serializable {
    protected String name;
    protected String gender;
     private int age;
