@@ -33,7 +33,7 @@ private void addEmployee(){
     switch (choose){
         case "1":
             System.out.println("введите имя мастера");
-             String name = sc.nextLine();
+            this.userName  = sc.nextLine();
             System.out.println("введите возраст мастера");
             int age = sc.nextInt();
             System.out.println("введите id мастера");
@@ -52,11 +52,11 @@ private void addEmployee(){
             String manicureTools = sc.nextLine();
             System.out.println("введите награды мастера полученые на международных конкурсах ");
             String awards = sc.nextLine();
-            listEmployees.add(new Manicurist(name,age,id,position,hiringDate,experience,education,medicalExaminationDate,manicureTools,awards));
+            listEmployees.add(new Manicurist(userName,age,id,position,hiringDate,experience,education,medicalExaminationDate,manicureTools,awards));
             break;
         case "2":
             System.out.println("введите имя масажиста");
-            name = sc.nextLine();
+            this.userName = sc.nextLine();
             System.out.println("введите возраст масажиста");
             age = sc.nextInt();
             System.out.println("введите id масажиста");
@@ -78,12 +78,12 @@ private void addEmployee(){
             System.out.println("введите медицинское опыт масажиста");
             String medicalExperience = sc.nextLine();
 
-            listEmployees.add(new Masseur(name,age,id,position,hiringDate,experience,education,medicalExaminationDate,
+            listEmployees.add(new Masseur(userName,age,id,position,hiringDate,experience,education,medicalExaminationDate,
                     qualification, medicalEducation, medicalExperience));
             break;
         case "3":
             System.out.println("введите имя Парикхмахера");
-            name = sc.nextLine();
+            this.userName = sc.nextLine();
             System.out.println("введите возраст парикхмахера");
             age = sc.nextInt();
             System.out.println("введите id парикхмахера");
@@ -102,10 +102,10 @@ private void addEmployee(){
             String specialization = sc.nextLine();
             System.out.println("введите категорию парикхмахера ");
             int category  = sc.nextInt();
-            listEmployees.add(new Hairdressing(name,age,id,position,hiringDate,experience,education,medicalExaminationDate,specialization,category));
+            listEmployees.add(new Hairdressing(userName,age,id,position,hiringDate,experience,education,medicalExaminationDate,specialization,category));
         case "4":
             System.out.println("введите имя Косметолога");
-            name = sc.nextLine();
+            this.userName = sc.nextLine();
             System.out.println("введите возраст Косметолога");
             age = sc.nextInt();
             System.out.println("введите id Косметолога");
@@ -131,12 +131,12 @@ private void addEmployee(){
             System.out.println("введите знание спа програмы");
             String spaPrograms = sc.nextLine();
 
-            listEmployees.add(new Cosmetology(name,age,id,position,hiringDate,experience,education,medicalExaminationDate,
+            listEmployees.add(new Cosmetology(userName,age,id,position,hiringDate,experience,education,medicalExaminationDate,
                     qualification,medicalEducation,medicalExperience,surgicalSpecialization,spaPrograms));
             break;
         case "5":
             System.out.println("введите имя директора");
-            name = sc.nextLine();
+            this.userName = sc.nextLine();
             System.out.println("введите возраст директора");
             age = sc.nextInt();
             System.out.println("введите id директора");
@@ -154,11 +154,11 @@ private void addEmployee(){
             System.out.println("введите домашний номер телефона");
             String homePhoneNumber = sc.nextLine();
 
-            listEmployees.add(new Director(name,age,id,position,hiringDate,experience,lastJob,homeAddress,homePhoneNumber));
+            listEmployees.add(new Director(userName,age,id,position,hiringDate,experience,lastJob,homeAddress,homePhoneNumber));
             break;
         case "6":
             System.out.println("введите данные менеджера");
-            name = sc.nextLine();
+            this.userName = sc.nextLine();
             System.out.println("введите возраст менеджера");
             age = sc.nextInt();
             System.out.println("введите id менеджера");
@@ -173,11 +173,11 @@ private void addEmployee(){
             String salesExperience = sc.nextLine();
             System.out.println("введите номер телефона менеджера");
             String phoneNumber = sc.nextLine();
-                listEmployees.add(new SalesManager(name,age,id,position,hiringDate,experience,salesExperience,phoneNumber));
+                listEmployees.add(new SalesManager(userName,age,id,position,hiringDate,experience,salesExperience,phoneNumber));
                 break;
         case "7":
             System.out.println("введите имя нового водителя");
-            name = sc.nextLine();
+            this.userName = sc.nextLine();
             System.out.println("введите возраст водителя");
             age = sc.nextInt();
             System.out.println("введите id водителя");
@@ -193,7 +193,7 @@ private void addEmployee(){
             System.out.println("введите результаты теста на наркотики");
             String drugTest = sc.nextLine();
 
-            listEmployees.add(new Driver(name,age,id,position,hiringDate,experience,drivingCategories,drugTest));
+            listEmployees.add(new Driver(userName,age,id,position,hiringDate,experience,drivingCategories,drugTest));
             break;
     }
 
@@ -280,9 +280,17 @@ private void dellEmployee(){
         }
 
     }
-    void searchUser(){
+    Employee searchUser(String userName) {
+        int list;
+        list = listEmployees.size();
+        for (int i = 0; i < list; i++) {
+            Employee element = listEmployees.get(i);
 
+
+            if (element.name.equals(userName)) {
+
+            }
+        }
+    return null;
     }
-
-
 }

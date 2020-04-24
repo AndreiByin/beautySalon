@@ -6,7 +6,7 @@ public class Employee implements Serializable {
     protected String name;
     private int age;
     protected int id;
-     String position;
+     private String position;
     protected String hiringDate;
     protected int experience;
 

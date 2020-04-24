@@ -14,7 +14,8 @@ public class Menu {
                     "2 для работы с услугами \n " +
                     "3 для работы с сотрудниками \n" +
                     " 4 для поиска услуги \n"+
-                    "5 для выхода \n");
+                    "5 для поиска сотрудника "+
+                    "6 для выхода \n");
             Scanner scr = new Scanner(System.in);
             choose = scr.nextLine();
 
@@ -36,14 +37,20 @@ public class Menu {
                         String s=scr.nextLine();
 
                         serviceControllerObj.searchService(s);
+                        break;
                     case "5":
+                        System.out.println("введите название искомого сотрудника");
+                        String u = scr.nextLine();
+                        userControllerObj.searchUser(u);
+
+                    case "6":
 
                         break;
                     default:
                         System.out.println("Нет токого пункта в меню");
                 }
             } catch ( NumberFormatException e) {
-                System.out.println("e.getMessage()");
+                System.out.println(e.getMessage());
             }
 
         }
