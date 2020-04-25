@@ -14,9 +14,10 @@ public class Menu {
             System.out.println("Введите \n 1 для работы с клиентами \n " +
                     "2 для работы с услугами \n " +
                     "3 для работы с сотрудниками \n" +
-                    " 4 для поиска услуги \n"+
-                    "5 для поиска сотрудника "+
-                    "6 для выхода \n");
+                    "4 для поиска услуги \n"+
+                    "5 для поиска сотрудника \n "+
+                    "6 для плиска клиента \n"+
+                    "7 для выхода \n");
             Scanner scr = new Scanner(System.in);
             choose = scr.nextLine();
 
@@ -25,7 +26,7 @@ public class Menu {
 
                 switch (choose) {
                     case "1":
-                        customerControllerObj.getClass();
+                        customerControllerObj.getCustomerMenu();
                         break;
                     case "2":
                         serviceControllerObj.getServiceMenu();
@@ -43,10 +44,16 @@ public class Menu {
                         System.out.println("введите название искомого сотрудника");
                         String u = scr.nextLine();
                         userControllerObj.searchUser(u);
+                        break;
 
                     case "6":
-
+                        System.out.println("введите название искомого клиента");
+                        String c = scr.nextLine();
+                        userControllerObj.searchUser(c);
                         break;
+
+                    case "7":
+
                     default:
                         System.out.println("Нет токого пункта в меню");
                 }
